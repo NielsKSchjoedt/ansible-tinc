@@ -40,7 +40,6 @@
     dest: "/etc/tinc/{{ tinc_netname }}/hosts/{{ inventory_hostname | replace('.','_') | replace('-','_') }}"
     line: "Address = {{ tinc_control_plane_bind_ip }}"
     create: yes
-  when: inventory_hostname in groups['tinc_spine_nodes']
   notify:
     - Restart Service
 
@@ -82,6 +81,7 @@
   synchronize:
     src: fetch/
     dest: "/etc/tinc/{{ tinc_netname }}/hosts/"
+    use_ssh_args: yes
   notify:
     - Restart Service
 

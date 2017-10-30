@@ -7,10 +7,6 @@ This role installs tinc in a star or a ring topology.
 
 The nodes part of the group tinc_node is a full list of nodes to apply/install the role.
 
-The nodes part of the tinc_spine_nodes are the "core" nodes, where all the nodes connect.
-If all the tinc_nodes are part of the tinc_spine_nodes, you have a more "ringy" topology.
-If you have one node in tinc_spine_nodes, you have a more "starry" topology.
-
 Requirements
 ------------
 
@@ -54,9 +50,6 @@ Inventory:
 [tinc_nodes]
 node1
 node2
-
-[tinc_spine_nodes]
-node1
 ```
 
 
